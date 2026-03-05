@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Search</title>
+
+<style>
+body{
+margin:0;
+font-family:sans-serif;
+}
+
+#bar{
+background:#111;
+padding:10px;
+}
+
+input{
+width:70%;
+padding:8px;
+}
+
+button{
+padding:8px;
+}
+
+iframe{
+width:100%;
+height:90vh;
+border:none;
+}
+</style>
+</head>
+
+<body>
+
+<div id="bar">
+<input id="q" placeholder="Search the web">
+<button onclick="search()">Search</button>
+</div>
+
+<iframe id="results"></iframe>
+
+<script>
+function search(){
+let q=document.getElementById("q").value;
+
+document.getElementById("results").src=
+"https://whoogle.privacydev.net/search?q="+encodeURIComponent(q);
+}
+</script>
+
+</body>
+</html>
